@@ -194,16 +194,24 @@
                         <img src="images/logos/svg/google-web-designer.svg" alt="Google Web Designer">
                     </div>
                     <h3>Experiencia</h3>
-                    <p>2019-actualidad => Cheil Worldwide<!--  · Diseñador Web y Front-End Developer. --></p>
+                    <p>2019-2020 => Cheil Worldwide<!--  · Diseñador Web y Front-End Developer. --></p>
                     <p>2016-2019 => Telecoming<!--  · Diseñador Web y Front-End Developer. --></p>
                     <p>2013-2016 => BQ<!--  · Diseñador gráfico editorial. --></p>
                     <p>2011-2012 => Ediciones Doce Calles<!--  · Diseñador gráfico editorial. --></p>
                     <p>2004-2010 => Lucam<!--  · Diseñador gráfico editorial. --></p>
                 </div>
             </div>
-            <div id="portfolio">
-                <div class="port__container">
-                    <div id="port1">
+            <section id="portfolio">
+                    <ul>
+                        <li class="button active" data-filter="todos">Todos</li>
+                        <li class="button" data-filter="design">Diseño</li>
+                        <li class="button" data-filter="web">Web</li>
+                        <!-- <li class="button" data-filter="verne">Verne</li>
+                        <li class="button" data-filter="hesse">Hesse</li>
+                        <li class="button" data-filter="christie">Christie</li> -->
+                        <div style="clear: both;"></div>
+                    </ul>
+                    <div id="port1" class="filter web">
                         <img id="producto1" alt="">
                         <div class="producto__info">
                             <span class="product_name">Adidas Originals</span>
@@ -214,7 +222,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port2">
+                    <div id="port2" class="filter web">
                         <img id="producto2" alt="">
                         <div class="producto__info">
                             <span class="product_name">Adidas Originals</span>
@@ -225,9 +233,96 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-            </div>
+                    <div id="port2" class="filter web">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter web">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter design">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter design">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter design">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter web">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter web">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="port2" class="filter web">
+                        <img id="producto2" alt="">
+                        <div class="producto__info">
+                            <span class="product_name">Adidas Originals</span>
+                            <p>Men's running shirt</p>
+                            <div class="product-options">
+                                <strong>SIZES</strong>
+                                <span>XS, S, M, L, XL, XXL</span>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            
         </main>
         <footer id="contacto">
             <h3>Conecta conmigo</h3>
@@ -297,6 +392,23 @@ $('#port1').hover(function(){
     $('#producto').removeClass('animate2');
     $('.producto__info').removeClass('animate3');
 }); 
+
+$(document).ready(function(){
+  $(".button").click(function(){
+    var value = $(this).attr("data-filter");
+    if (value =="todos") {
+      $(".filter").show("1000");
+    }
+    else {
+     $(".filter").not("."+value).hide("1000");
+   $(".filter").filter("."+value).show("1000"); 
+    }
+    //add active class
+    $("ul .button").click(function(){
+      $(this).addClass("active").siblings().removeClass("active")
+    })
+  })
+})
 
     </script>
 </html>

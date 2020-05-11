@@ -421,14 +421,14 @@ nav{
     align-items: center;
 
 
-    @media (min-width: 768px){
+    @media (min-width: 1000px){
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
         -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
         justify-content: space-around;
-        padding: 12% 8%;
+        // padding: 12% 8%;
         height: 100vh;
     }
 
@@ -439,7 +439,7 @@ nav{
         height: 300px;
         width: 100%;
 
-        @media (min-width: 768px){
+        @media (min-width: 1000px){
             width: 40%;
             height: 100%;
             max-height: 450px;
@@ -458,7 +458,7 @@ nav{
         outline-offset: -2em;
         color: #fff;
 
-        @media (min-width: 768px){
+        @media (min-width: 1000px){
             width: 45%;
             max-height: 100vh;
             padding: 4.5em;
@@ -476,7 +476,7 @@ nav{
             background: #232323;
             padding: 0 0.3em;
 
-            @media (min-width: 768px){
+            @media (min-width: 1000px){
                 top: 0.40em;
             }
         }
@@ -526,110 +526,96 @@ nav{
 
 /*SECCIÓN 2
 ============*/
-
 #portfolio{
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
     align-content: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 
     width: 100%;
-    height: 100vh;
 
-    .port__container{
-        position: relative;
-        width: 80%;
-        height: 500px;
+    @media all and (-ms-high-contrast:none) {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
+      }
 
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
+    @media (min-width: 1000px){
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-align-content: center;
-        -ms-flex-line-pack: center;
-        align-content: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
+    }
 
-        #port1, #port2{
-            width: 325px;
-            height: 490px;
-            // position: absolute;
-            // top: 10px;
-            // left: 10px;
-            overflow: hidden;
-            margin: 0 15px;
-            -webkit-transition: 100ms ease-out;
-            -moz-transition: 100ms ease-out;
-            -o-transition: 100ms ease-out;
-            transition: 100ms ease-out;
-            border-radius: 20px;
-        }
-        .animate{
-            box-shadow:0px 13px 21px -5px rgba(255, 255, 255, 0.3);
-        }
-        .animate2{
-            -webkit-transition:  100ms ease-out; 
-            -moz-transition:  100ms ease-out; 
-            -o-transition:  100ms ease-out; 
-            transition:  100ms ease-out;
-            transform: scale(1.1);
-        }
-        .animate3{
-            transform: translate(0, -50px);
-        }
+    #port1, #port2{
+        width: 390px;
+        min-width: 390px;
+        height: 390px;
+        overflow: hidden;
+        margin: 15px;
+        -webkit-transition: 100ms ease-out;
+        -moz-transition: 100ms ease-out;
+        -o-transition: 100ms ease-out;
+        transition: 100ms ease-out;
+        border-radius: 20px;
+    }
+    .animate{
+        box-shadow:0px 13px 21px -5px rgba(255, 255, 255, 0.3);
+    }
+    .animate2{
+        -webkit-transition:  100ms ease-out; 
+        -moz-transition:  100ms ease-out; 
+        -o-transition:  100ms ease-out; 
+        transition:  100ms ease-out;
+        transform: scale(1.1);
+    }
+    .animate3{
+        transform: translate(0, -50px);
+    }
 
-        #producto1{
-            width: 100%;
-            height: 100%;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png') no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-        #producto2{
-            width: 100%;
-            height: 100%;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png') no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+    #producto1{
+        width: 100%;
+        height: 100%;
+        background: url('../images/designs/silveria.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    #producto2{
+        width: 100%;
+        height: 100%;
+        background: url('../images/designs/dequilibrio.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-        .producto__info{
-            background:#fff;
-            color: #000;    
-            position:absolute;
-            top:386px;
-            width:100%;
-            height:300px;
-            padding:27px 35px 35px; 
-            -webkit-transition: all 200ms ease-out; 
-            -moz-transition: all 200ms ease-out; 
-            -o-transition: all 200ms ease-out; 
-            transition: all 200ms ease-out;
-        }
+    .producto__info{
+        background:rgba(255, 255, 255, 0.8);
+        color: #000;    
+        position:absolute;
+        top:286px;
+        width:100%;
+        height:300px;
+        padding:27px 35px 35px; 
+        -webkit-transition: all 200ms ease-out; 
+        -moz-transition: all 200ms ease-out; 
+        -o-transition: all 200ms ease-out; 
+        transition: all 200ms ease-out;
     }
 
 }
