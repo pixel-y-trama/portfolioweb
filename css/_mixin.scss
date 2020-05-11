@@ -1,0 +1,341 @@
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++ CLASES DE AYUDA ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@mixin boton($height:2rem, $width: auto, $padding: 0 1rem){
+  display: block; height: $height; line-height: $height; width: $width; padding: $padding; font-size: 1.25rem; border-radius: 0; text-align: center;
+  &:active{
+    box-shadow: 0 0 2px rgba(0,0,0,0.5) inset;
+  }
+}
+
+// Animacion
+@mixin animado($time:0.5s)      {
+  -webkit-transition: all $time ease-out;
+  -moz-transition:    all $time ease-out;
+  -ms-transition:     all $time ease-out;
+  -o-transition:      all $time ease-out;
+  transition:         all $time ease-out;
+}
+// Animacion
+@mixin animado_custom($who:all, $time:0.5s,$ease:linear)      {
+  -webkit-transition: $who $time $ease;
+  -moz-transition:    $who $time $ease;
+  -ms-transition:     $who $time $ease;
+  -o-transition:      $who $time $ease;
+  transition:         $who $time $ease;
+}
+
+// Rotate
+@mixin transform($string) {
+  -webkit-transform: $string;
+     -moz-transform: $string;
+      -ms-transform: $string;
+       -o-transform: $string;
+          transform: $string;
+}
+@mixin transformOrigin($string) {
+  -webkit-transform-origin: $string;
+     -moz-transform-origin: $string;
+      -ms-transform-origin: $string;
+       -o-transform-origin: $string;
+          transform-origin: $string;
+}
+@mixin animation($name,$duration:500,$timing:'ease-out',$count:"",$direction:"",$state:"",$delay:"",$fill:""){
+    animation: $name $duration $timing #{$count} #{$direction} #{$state} #{$delay} #{$fill};
+    -o-animation: $name $duration $timing #{$count} #{$direction} #{$state} #{$delay} #{$fill};
+    -ms-animation: $name $duration $timing #{$count} #{$direction} #{$state} #{$delay} #{$fill};
+    -moz-animation: $name $duration $timing #{$count} #{$direction} #{$state} #{$delay} #{$fill};
+    -webkit-animation: $name $duration $timing #{$count} #{$direction} #{$state} #{$delay} #{$fill};
+}
+@mixin picoTop($ancho){
+  @include transform(rotate(45deg)); width: $ancho; height: $ancho; left: 50%; top: -$ancho/2; margin-left: -$ancho/2; position: absolute;
+}
+
+@mixin picoBottom($ancho){
+  @include transform(rotate(45deg)); width: $ancho; height: $ancho; left: 50%; bottom: -$ancho/2; margin-left: -$ancho/2; position: absolute;
+}
+
+@mixin picoLeft($ancho){
+  @include transform(rotate(45deg)); width: $ancho; height: $ancho; left: -$ancho/2; top: 50%; margin: -$ancho/2 0 0 0; position: absolute;
+}
+
+@mixin picoRight($ancho){
+  @include transform(rotate(45deg)); width: $ancho; height: $ancho; right: -$ancho/2; top: 50%; margin: -$ancho/2 0 0 0; position: absolute;
+}
+
+@mixin bfv(){
+-webkit-backface-visibility:hidden;
+-moz-backface-visibility:hidden;
+-ms-backface-visibility:hidden;
+-o-backface-visibility:hidden;
+backface-visibility:hidden;
+}
+@mixin perspective($number){
+-webkit-perspective: $number;
+perspective: $number;
+}
+@mixin preserve3d(){
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+// Drop shadows
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+
+// Box sizing
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+// Degradado
+@mixin gradient($origin: left, $start: #ffffff, $stop: #000000) {
+    background-color: $start;
+    background-image: -webkit-linear-gradient($origin, $start, $stop);
+    background-image: -moz-linear-gradient($origin, $start, $stop);
+    background-image: -o-linear-gradient($origin, $start, $stop);
+    background-image: -ms-linear-gradient($origin, $start, $stop);
+    background-image: linear-gradient($origin, $start, $stop);
+}
+
+
+// Degradado 2
+
+@mixin gradient2($base, $start: #fff, $stop: #000){
+  background: rgb(229,26,35); /* Old browsers */
+  background: -moz-linear-gradient(top,  $start 0%, $stop 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$stop)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $start 0%,$stop 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $start 0%,$stop 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $start 0%,$stop 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $start 0%,$stop 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e51a23', endColorstr='#93060d',GradientType=0 ); /* IE6-9 */
+
+  &:hover{
+    background: rgb(229,26,35); /* Old browsers */
+    background: -moz-linear-gradient(top,  darken($start, 10%) 0%, darken($stop, 10%) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,darken($start, 10%)), color-stop(100%,darken($stop, 10%))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  darken($start, 10%) 0%,darken($stop, 10%) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  darken($start, 10%) 0%,darken($stop, 10%) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  darken($start, 10%) 0%,darken($stop, 10%) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  darken($start, 10%) 0%,darken($stop, 10%) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e51a23', endColorstr='#93060d',GradientType=0 ); /* IE6-9 */
+
+  }
+
+
+}
+
+
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2 
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Retina
+@mixin retina-image($file-1x, $file-2x) {
+  background-image: url($file-1x);
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (   min--moz-device-pixel-ratio: 1.5),
+  only screen and (     -o-min-device-pixel-ratio: 1.5),
+  only screen and (        min-device-pixel-ratio: 1.5),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url($file-2x);
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+}
+@mixin centrado-absoluto(){
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  -webkit-transform:translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+
+
+
+/**
+ * Degradados.
+ */
+
+@mixin degradado-2($color-top,$color-bottom){
+     background: $color-top; /* Old browsers */
+     background: -moz-linear-gradient(top,  $color-top 0%, $color-bottom 100%); /* FF3.6+ */
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color-top), color-stop(100%,$color-bottom)); /* Chrome,Safari4+ */
+     background: -webkit-linear-gradient(top,  $color-top 0%,$color-bottom 100%); /* Chrome10+,Safari5.1+ */
+     background: -o-linear-gradient(top,  $color-top 0%,$color-bottom 100%); /* Opera 11.10+ */
+     background: -ms-linear-gradient(top,  $color-top 0%,$color-bottom 100%); /* IE10+ */
+     background: linear-gradient(to bottom,  $color-top 0%,$color-bottom 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 ); /* IE6-9 */
+
+}
+
+@mixin degradado-3($color-top, $color-middel, $color-bottom){
+    background: $color-top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color-top 0%, $color-middel 50%, $color-bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color-top), color-stop(50%,$color-middel), color-stop(100%,$color-bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color-top 0%,$color-middel 50%,$color-bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color-top 0%,$color-middel 50%,$color-bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color-top 0%,$color-middel 50%,$color-bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $color-top 0%,$color-middel 50%,$color-bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin degradado-4($color-top,$color-middel-1,$color-middel-2,$color-bottom,$percent-top,$percent-middel-1,$percent-middel-2,$percent-bottom){
+    background: $color-top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color-top $percent-top, $color-middel-1 $percent-middel-1, $color-middel-2 $percent-middel-2, $color-bottom $percent-bottom); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($percent-top,$color-top), color-stop($percent-middel-1,$color-middel-1), color-stop($percent-middel-2,$color-middel-2), color-stop($percent-bottom,$color-bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-bottom $percent-bottom); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-bottom $percent-bottom); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-bottom $percent-bottom); /* IE10+ */
+    background: linear-gradient(to bottom,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-bottom $percent-bottom); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin degradado-5($color-top,$color-middel-1,$color-middel-2,$color-middel-3,$color-bottom,$percent-top,$percent-middel-1,$percent-middel-2,$percent-middel-3,$percent-bottom){
+    background: $color-top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color-top $percent-top, $color-middel-1 $percent-middel-1, $color-middel-2 $percent-middel-2, $color-middel-3 $percent-middel-3, $color-bottom $percent-bottom); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($percent-top,$color-top), color-stop($percent-middel-1,$color-middel-1), color-stop($percent-middel-2,$color-middel-2), color-stop($percent-middel-3,$color-middel-3), color-stop($percent-bottom,$color-bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-middel-3 $percent-middel-3,$color-bottom $percent-bottom); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-middel-3 $percent-middel-3,$color-bottom $percent-bottom); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-middel-3 $percent-middel-3,$color-bottom $percent-bottom); /* IE10+ */
+    background: linear-gradient(to bottom,  $color-top $percent-top,$color-middel-1 $percent-middel-1,$color-middel-2 $percent-middel-2,$color-middel-3 $percent-middel-3,$color-bottom $percent-bottom); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+@mixin he-wid($width,$height){
+    width: $width; height: $height; 
+}
+
+/**
+ * Clear fix.
+ */
+@mixin clearfix{
+    &:before,&:after {
+        content: " "; // 1
+        display: table; // 2
+        visibility: hidden;
+        font-size: 0;
+        height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin animado {
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+
+@mixin transform($transform-style:"",$perspective:"",$perspective-origin:"",$transform-origin:"",$backface-visibility:""){
+    -webkit-transform: #{$transform-style} #{$perspective} #{$perspective-origin} #{$transform-origin} #{$backface-visibility};
+    -moz-transform: #{$transform-style} #{$perspective} #{$perspective-origin} #{$transform-origin} #{$backface-visibility};
+    -ms-transform: #{$transform-style} #{$perspective} #{$perspective-origin} #{$transform-origin} #{$backface-visibility};
+    -o-transform: #{$transform-style} #{$perspective} #{$perspective-origin} #{$transform-origin} #{$backface-visibility};
+    transform: #{$transform-style} #{$perspective} #{$perspective-origin} #{$transform-origin} #{$backface-visibility};    
+}
+
+
+@mixin transition($transition-property:"",$transition-duration:"",$transition-timing-function:"",$transition-delay:"",$transition:""){
+    -webkit-transition: #{$transition-property} #{$transition-duration} #{$transition-timing-function} #{$transition-delay} #{$transition};
+    -moz-transition: #{$transition-property} #{$transition-duration} #{$transition-timing-function} #{$transition-delay} #{$transition};
+    -ms-transition: #{$transition-property} #{$transition-duration} #{$transition-timing-function} #{$transition-delay} #{$transition};
+    -o-transition: #{$transition-property} #{$transition-duration} #{$transition-timing-function} #{$transition-delay} #{$transition};
+    transition: #{$transition-property} #{$transition-duration} #{$transition-timing-function} #{$transition-delay} #{$transition};    
+}
+
+
+@mixin key-frames-parpadeo(){
+    @keyframes parpadeo {
+        from{
+            @include transition(all, 0.5s, ease-in-out, 0s); 
+            color: gray;
+        }
+    }
+    @-webkit-keyframes parpadeo {
+        from{
+            @include transition(all, 0.5s, ease-in-out, 0s); 
+            color: gray;
+        }
+    }
+    @-moz-keyframes parpadeo {
+        from{
+            @include transition(all, 0.5s, ease-in-out, 0s); 
+            color: gray;
+        }
+    }
+    @-ms-keyframes parpadeo {
+        from{
+            @include transition(all, 0.5s, ease-in-out, 0s); 
+            color: gray;
+        }
+    }
+    @-o-keyframes parpadeo {
+        from{
+            @include transition(all, 0.5s, ease-in-out, 0s); 
+            color: gray;
+        }
+    }
+}
+
+
+
+// Retina
+@mixin retina-image($file-1x, $file-2x) {
+    background-image: url("#{$file-1x}");
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and ( min--moz-device-pixel-ratio: 1.5),
+    only screen and ( -o-min-device-pixel-ratio: 3/2),
+    only screen and ( min-device-pixel-ratio: 1.5),
+    only screen and ( min-resolution: 192dpi),
+    only screen and ( min-resolution: 2dppx) {
+        background: {
+            image: url("#{$file-2x}");
+            size: contain; 
+        }
+    }
+}
+
+/**
+ * Border into divs by default.
+ */
+$flexible-border: border-box;
+$flexible-padding: padding-box !important;
+@mixin flexible {
+    -webkit-box-sizing: $flexible-border;
+    -moz-box-sizing: $flexible-border;
+    box-sizing: $flexible-border;
+    -moz-background-clip: $flexible-padding;
+    -webkit-background-clip: $flexible-padding;
+    background-clip: $flexible-padding;
+}
+
