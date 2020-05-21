@@ -88,9 +88,9 @@ img {
 /*VARIABLES
 ============*/
 html, body {
+  width: 100%;
   height: 100%;
   min-height: 100%;
-  width: 100%;
 }
 
 body {
@@ -99,13 +99,14 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Fira Sans", sans-serif;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 /*COMPARTIDOS
@@ -223,7 +224,6 @@ main {
 #home {
   width: 100%;
   height: 100vh;
-  min-height: 100vh;
   position: relative;
   background: url("../images/startup-593327_1920-BN.jpg") no-repeat;
   background-attachment: fixed;
@@ -439,7 +439,6 @@ nav a .barrita-animada {
   width: 100%;
   background: url(https://himigatliwanag.files.wordpress.com/2016/01/milky-way.jpg) top center fixed no-repeat;
   background-size: cover;
-  height: 100%;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -573,10 +572,58 @@ nav a .barrita-animada {
   }
 }
 
+#sobreMi .descripcion #experiencia__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  justify-items: center;
+}
+
+#sobreMi .descripcion #experiencia__container .experiencia__container-logo {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+#sobreMi .descripcion #experiencia__container .experiencia__container-logo img {
+  width: 50%;
+}
+
 /*==========*/
 /*SECCIÓN 2
 ============*/
+#portfolio {
+  width: 100%;
+  height: 100%;
+  background: black;
+  background: -webkit-gradient(left top, right top, color-stop(0%, black), color-stop(100%, #1a1a1a));
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#1a1a1a));
+  background: linear-gradient(to right, black 0%, #1a1a1a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a1a1a', GradientType=1 );
+  padding: 10% 3%;
+}
+
 #portfolio__nav {
+  width: 10%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -585,7 +632,10 @@ nav a .barrita-animada {
       grid-template-rows: 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 0px;
-  margin: 5% auto 0;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-items: center;
 }
 
 #portfolio__nav .button {
@@ -595,14 +645,25 @@ nav a .barrita-animada {
   cursor: pointer;
   padding: 7px;
   width: 100px;
-  background: grey;
-  border-radius: 15px;
+  background: #000;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #00ff6c;
+  border-radius: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: ease-in 0.4s;
+  transition: ease-in 0.4s;
 }
 
-#portfolio {
+#portfolio__nav .btn__activo {
+  background: #00ff6c;
+  border: 0px;
+  color: #000;
+}
+
+#portfolio__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[1];
@@ -612,53 +673,51 @@ nav a .barrita-animada {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   margin: 0 auto;
-  width: 100%;
-  height: 100%;
   padding: 5%;
 }
 
 @media (min-width: 1000px) {
-  #portfolio {
-    max-width: 90%;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+  #portfolio__container {
+    max-width: 100%;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     -ms-grid-rows: (1fr)[5];
         grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
   }
 }
 
 @media all and (-ms-high-contrast: none) {
-  #portfolio {
+  #portfolio__container {
     display: -ms-grid;
-    -ms-grid-columns: repeat(3, 1fr);
+    -ms-grid-columns: repeat(4, 1fr);
     -ms-grid-rows: repeat(5, 1fr);
   }
 }
 
 @media (min-width: 1000px) {
-  #portfolio {
+  #portfolio__container {
     -ms-flex-direction: row;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
   }
 }
 
 @media all and (min-width: 1000px) and (-ms-high-contrast: none) {
-  #portfolio {
+  #portfolio__container {
     display: -ms-grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: repeat(4, 1fr);
     -ms-grid-rows: 1fr 1fr 1fr;
   }
 }
 
-#portfolio #port1, #portfolio #port2, #portfolio #port3, #portfolio #port4, #portfolio #port5, #portfolio #port6, #portfolio #port7, #portfolio #port8, #portfolio #port9, #portfolio #port10 {
+#portfolio__container #port1, #portfolio__container #port2, #portfolio__container #port3, #portfolio__container #port4, #portfolio__container #port5, #portfolio__container #port6, #portfolio__container #port7, #portfolio__container #port8, #portfolio__container #port9, #portfolio__container #port10 {
   display: block;
   width: 100%;
   height: 380px;
@@ -666,24 +725,24 @@ nav a .barrita-animada {
   border-radius: 20px;
 }
 
-#portfolio .animate {
+#portfolio__container .animate {
   -webkit-box-shadow: 0px 13px 21px -5px rgba(255, 255, 255, 0.3);
           box-shadow: 0px 13px 21px -5px rgba(255, 255, 255, 0.3);
 }
 
-#portfolio .animate2 {
+#portfolio__container .animate2 {
   -webkit-transition: 300ms ease-out;
   transition: 300ms ease-out;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-#portfolio .animate3 {
-  -webkit-transform: translate(0, -50px);
-          transform: translate(0, -50px);
+#portfolio__container .animate3 {
+  -webkit-transform: translate(0, -55px);
+          transform: translate(0, -55px);
 }
 
-#portfolio #producto1 {
+#portfolio__container #producto1 {
   width: 100%;
   height: 100%;
   background: url("../images/designs/silveria.jpg") no-repeat;
@@ -691,7 +750,7 @@ nav a .barrita-animada {
   background-size: cover;
 }
 
-#portfolio #producto2 {
+#portfolio__container #producto2 {
   display: block;
   width: 100%;
   height: 100%;
@@ -700,7 +759,7 @@ nav a .barrita-animada {
   background-position: center;
 }
 
-#portfolio #producto3 {
+#portfolio__container #producto3 {
   display: block;
   width: 100%;
   height: 100%;
@@ -709,7 +768,7 @@ nav a .barrita-animada {
   background-position: center;
 }
 
-#portfolio #producto4 {
+#portfolio__container #producto4 {
   display: block;
   width: 100%;
   height: 100%;
@@ -718,19 +777,34 @@ nav a .barrita-animada {
   background-position: center;
 }
 
-#portfolio .producto__info {
+#portfolio__container #producto5 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../images/designs/wizink-banners.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio__container .producto__info {
   background: rgba(255, 255, 255, 0.8);
   color: #000;
   position: absolute;
-  top: 285px;
+  top: 302px;
   width: 100%;
   height: 300px;
   padding: 20px 20px 20px;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-#portfolio .producto__info .product_name {
+@media (min-width: 1000px) {
+  #portfolio__container .producto__info {
+    top: 305px;
+  }
+}
+
+#portfolio__container .producto__info .producto_nombre {
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -738,14 +812,33 @@ nav a .barrita-animada {
   padding-bottom: 4px;
 }
 
+#portfolio__container .producto__info .producto_descripcion {
+  height: auto;
+}
+
+#portfolio__container .producto__info .producto_logos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0px;
+  padding: 1em 0;
+}
+
+#portfolio__container .producto__info .producto_logos img {
+  width: 50%;
+}
+
 /*FOOTER
 ============*/
 #contacto {
   width: 100%;
-  background: #00ff6c;
+  background: rgba(0, 255, 108, 0.9);
   color: #000;
   padding: 1em;
-  opacity: 0.9;
 }
 
 #contacto h3 {

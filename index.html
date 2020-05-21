@@ -76,7 +76,7 @@
             </a>           
         </header>
         <main>
-            <section id="home">
+            <section id="home" class="mydiv">
                 <article id="intro">
                     <h1>Hello World!</h1>
                     <p><span id="descripcion-empleo"></span><span class="cursor">|</span></p>
@@ -103,7 +103,7 @@
                             <p>Sobre mí</p>
                             <span class="barrita-animada"></span>
                         </a>
-                        <a href="#sobreMi">
+                        <a href="#portfolio">
                             <svg version="1.1" alt="Portfolio Jaime Mena" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                             <path class="st0" d="M414,398.3c-5.5,0-10,4.5-10,10V482c0,5.5-4.5,10-10,10H30c-5.5,0-10-4.5-10-10V30c0-5.5,4.5-10,10-10h364
@@ -171,7 +171,7 @@
 
             </section>
 
-            <div id="sobreMi">
+            <section id="sobreMi" class="mydiv">
                 <div class="yomismo"></div>
 
                 <div class="descripcion">
@@ -194,103 +194,140 @@
                         <img src="images/logos/svg/google-web-designer.svg" alt="Google Web Designer">
                     </div>
                     <h3>Experiencia</h3>
-                    <p>2019-2020 => Cheil Worldwide<!--  · Diseñador Web y Front-End Developer. --></p>
-                    <p>2016-2019 => Telecoming<!--  · Diseñador Web y Front-End Developer. --></p>
-                    <p>2013-2016 => BQ<!--  · Diseñador gráfico editorial. --></p>
-                    <p>2011-2012 => Ediciones Doce Calles<!--  · Diseñador gráfico editorial. --></p>
-                    <p>2004-2010 => Lucam<!--  · Diseñador gráfico editorial. --></p>
+                    <!-- <p>2019-2020 => Cheil Worldwide · Diseñador Web y Front-End Developer.</p>
+                    <p>2016-2019 => Telecoming · Diseñador Web y Front-End Developer.</p>
+                    <p>2013-2016 => BQ · Diseñador gráfico editorial.</p>
+                    <p>2011-2012 => Ediciones Doce Calles · Diseñador gráfico editorial.</p>
+                    <p>2004-2010 => Lucam · Diseñador gráfico editorial.</p> -->
+                    
+                    <div id="experiencia__container">
+                        <div class="experiencia__container-logo">
+                            <img src="images/logos/svg/logo-cheil.svg" alt="Cheil Worldwide">
+                            <p>2019-2020</p>
+                        </div>
+                        <div class="experiencia__container-logo">
+                            <img src="images/logos/svg/logo-cheil.svg" alt="Cheil Worldwide">
+                            <p>2016-2019</p>
+                        </div>
+                        <div class="experiencia__container-logo">
+                            <img src="images/logos/svg/logo-bq.svg" alt="Cheil Worldwide">
+                            <p>2013-2016</p>
+                        </div>
+                        <div class="experiencia__container-logo">
+                            <img src="images/logos/svg/logo-dc.svg" alt="Cheil Worldwide">
+                            <p>2011-2012</p>
+                        </div>
+                        <p>2004-2010 => Lucam<!--  · Diseñador gráfico editorial. --></p>
+                    </div>
                 </div>
-            </div>
-            <ul id="portfolio__nav">
-                <li class="button active" data-filter="todos">Todos</li>
-                <li class="button" data-filter="design">Diseño</li>
-                <li class="button" data-filter="web">Web</li>
-                <!-- <li class="button" data-filter="verne">Verne</li>
-                <li class="button" data-filter="hesse">Hesse</li>
-                <li class="button" data-filter="christie">Christie</li> -->
-                <!-- <div style="clear: both;"></div> -->
-            </ul>
-            <section id="portfolio">
-                    <!-- <ul>
-                        <li class="button active" data-filter="todos">Todos</li>
-                        <li class="button" data-filter="design">Diseño</li>
-                        <li class="button" data-filter="web">Web</li>
-                        <div style="clear: both;"></div>
-                    </ul> -->
+            </section>
+            
+            <section id="portfolio" class="mydiv">
+                <ul id="portfolio__nav">
+                    <li class="button btn__activo" data-filter="todos">Todos</li>
+                    <li class="button" data-filter="design">Diseño</li>
+                    <li class="button" data-filter="web">Web</li>
+                    <!-- <li class="button" data-filter="verne">Verne</li>
+                    <li class="button" data-filter="hesse">Hesse</li>
+                    <li class="button" data-filter="christie">Christie</li> -->
+                    <!-- <div style="clear: both;"></div> -->
+                </ul>
+                <div id="portfolio__container">
                     <div id="port1" class="filter design">
-                        <img id="producto1" alt="">
+                        <div id="producto1" alt=""></div>
                         <div class="producto__info">
-                            <p class="product_name">Logotipo</p>
-                            <p>Realizado para una tienda de joyería.</p>
+                            <p class="producto_nombre">Logotipo</p>
+                            <p class="producto_descripcion">Realizado para una tienda de joyería.</p>
+                            <div class="producto_logos">
+                                <img src="images/logos/svg-negro/illustrator.svg" alt="Illustrator">
+                            </div>
                         </div>
                     </div>
-                    <div id="port2" class="filter design">
-                        <img id="producto2" alt="">
+                    <div id="port2" class=" design">
+                        <div id="producto2" alt=""></div>
                         <div class="producto__info">
-                            <p class="product_name">Logotipo</p>
-                            <p>Diseñado para una productora de cine.</p>
+                            <p class="producto_nombre">Logotipo</p>
+                            <p class="producto_descripcion">Diseñado para una productora de cine.</p>
+                            <div class="producto_logos">
+                                <img src="images/logos/svg-negro/illustrator.svg" alt="Illustrator">
+                            </div>
                         </div>
                     </div>
                     <div id="port3" class="filter design">
-                        <img id="producto3" alt="">
+                        <div id="producto3" alt=""></div>
                         <div class="producto__info">
-                            <p class="product_name">Logotipo</p>
-                            <p>Diseño experimental.</p>
+                            <p class="producto_nombre">Logotipo</p>
+                            <p class="producto_descripcion">Diseño experimental.</p>
+                            <div class="producto_logos">
+                                <img src="images/logos/svg-negro/illustrator.svg" alt="Illustrator">
+                            </div>
                         </div>
                     </div>
                     <div id="port4" class="filter web">
-                        <img id="producto4" alt="">
+                        <div id="producto4" alt=""></div>
                         <div class="producto__info">
-                            <p class="product_name">Formulario web</p>
-                            <p>Mockup.</p>
+                            <p class="producto_nombre">Formulario web</p>
+                            <p class="producto_descripcion">Mockup.</p><div class="producto_logos">
+                                <img src="images/logos/svg-negro/sketch.svg" alt="Sketch">
+                                <img src="images/logos/svg-negro/html5.svg" alt="HTML5">
+                                <img src="images/logos/svg-negro/css3.svg" alt="CSS3">
+                            </div>
                         </div>
                     </div>
                     <div id="port5" class="filter design">
-                        <img id="producto5" alt="">
+                        <div id="producto5" alt=""></div>
                         <div class="producto__info">
-                            <span class="product_name">Adidas Originals</span>
-                            <p>Men's running shirt</p>
+                            <p class="producto_nombre">Banners RRSS</p>
+                            <p class="producto_descripcion">Banners para Wizink Bank.</p>
+                            <div class="producto_logos">
+                                <img src="images/logos/svg-negro/photoshop.svg" alt="Photoshop">
+                            </div>
                         </div>
                     </div>
                     <div id="port6" class="filter design">
-                        <img id="producto6" alt="">
+                        <div id="producto6" alt=""></div>
                         <div class="producto__info">
-                            <span class="product_name">Adidas Originals</span>
-                            <p>Men's running shirt</p>
+                            <p class="producto_nombre">Formulario web</p>
+                            <p class="producto_descripcion">Mockup.</p><div class="producto_logos">
+                                <img src="images/logos/svg-negro/sketch.svg" alt="Sketch">
+                                <img src="images/logos/svg-negro/html5.svg" alt="HTML5">
+                                <img src="images/logos/svg-negro/css3.svg" alt="CSS3">
+                            </div>
                         </div>
                     </div>
                     <div id="port7" class="filter design">
-                        <img id="producto7" alt="">
+                        <div id="producto7" alt=""></div>
                         <div class="producto__info">
-                            <span class="product_name">Adidas Originals</span>
+                            <span class="producto_nombre">Adidas Originals</span>
                             <p>Men's running shirt</p>
                         </div>
                     </div>
                     <div id="port8" class="filter web">
-                        <img id="producto8" alt="">
+                        <div id="producto8" alt=""></div>
                         <div class="producto__info">
-                            <span class="product_name">Adidas Originals</span>
+                            <span class="producto_nombre">Adidas Originals</span>
                             <p>Men's running shirt</p>
                         </div>
                     </div>
                     <div id="port9" class="filter web">
-                        <img id="producto9" alt="">
+                        <div id="producto9" alt=""></div>
                         <div class="producto__info">
-                            <span class="product_name">Adidas Originals</span>
+                            <span class="producto_nombre">Adidas Originals</span>
                             <p>Men's running shirt</p>
                         </div>
                     </div>
                     <div id="port10" class="filter web">
-                        <img id="producto10" alt="">
+                        <div id="producto10" alt=""></div>
                         <div class="producto__info">
-                            <span class="product_name">Adidas Originals</span>
+                            <span class="producto_nombre">Adidas Originals</span>
                             <p>Men's running shirt</p>
                         </div>
                     </div>
+                </div>
             </section>
             
         </main>
-        <footer id="contacto">
+        <footer id="contacto" class="mydiv">
             <h3>Conecta conmigo</h3>
             <div id="rrss">
                 <a href="https://www.linkedin.com/in/jaime-mena-martinez" target="_blank">
@@ -299,7 +336,7 @@
                 <a href="https://twitter.com/menaofficial_" target="_blank">
                     <div id="rrss2"></div>
                 </a>
-                <a href="https://github.com/jmenadesign" target="_blank">
+                <a href="https://github.com/pixel-y-trama" target="_blank">
                     <div id="rrss3"></div>
                 </a>
                 <a href="https://www.instagram.com/pixeltrama/" target="_blank">
@@ -348,7 +385,7 @@ document.getElementById("flecha-abajo").addEventListener("click", function() {
     return false;
 });
 
-
+// portfolio
 $('#port1').hover(function(){
     $('#port1').addClass('animate');
     $('#producto1').addClass('animate2');
@@ -434,10 +471,46 @@ $(document).ready(function(){
     }
     //add active class
     $("ul .button").click(function(){
-      $(this).addClass("active").siblings().removeClass("active")
+      $(this).addClass("btn__activo").siblings().removeClass("btn__activo")
     })
   })
 })
+
+// scroll mouse
+
+//  $(document).ready(function () {
+//     var divs = $('.mydiv');
+//     var dir = 'up'; // wheel scroll direction
+//     var div = 0; // current div
+//     $(document.body).on('DOMMouseScroll mousewheel', function (e) {
+//         if (e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) {
+//             dir = 'down';
+//         } else {
+//             dir = 'up';
+//         }
+//         // find currently visible div :
+//         div = -1;
+//         divs.each(function(i){
+//             if (div<0 && ($(this).offset().top >= $(window).scrollTop())) {
+//                 div = i;
+//             }
+//         });
+//         if (dir == 'up' && div > 0) {
+//             div--;
+//         }
+//         if (dir == 'down' && div < divs.length) {
+//             div++;
+//         }
+//         //console.log(div, dir, divs.length);
+//         $('html,body').stop().animate({
+//             scrollTop: divs.eq(div).offset().top
+//         }, 500);
+//         return false;
+//     });
+//     $(window).resize(function () {
+//         $('html,body').scrollTop(divs.eq(div).offset().top);
+//     });
+// });
 
     </script>
 </html>
