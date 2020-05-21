@@ -227,13 +227,9 @@
                     <li class="button btn__activo" data-filter="todos">Todos</li>
                     <li class="button" data-filter="design">Diseño</li>
                     <li class="button" data-filter="web">Web</li>
-                    <!-- <li class="button" data-filter="verne">Verne</li>
-                    <li class="button" data-filter="hesse">Hesse</li>
-                    <li class="button" data-filter="christie">Christie</li> -->
-                    <!-- <div style="clear: both;"></div> -->
                 </ul>
                 <div id="portfolio__container">
-                    <div id="port1" class="filter design">
+                    <div id="port1" class="portfolioHover filter design">
                         <div id="producto1" alt=""></div>
                         <div class="producto__info">
                             <p class="producto_nombre">Logotipo</p>
@@ -243,7 +239,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port2" class=" design">
+                    <div id="port2" class="portfolioHover filter design">
                         <div id="producto2" alt=""></div>
                         <div class="producto__info">
                             <p class="producto_nombre">Logotipo</p>
@@ -253,7 +249,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port3" class="filter design">
+                    <div id="port3" class="portfolioHover filter design">
                         <div id="producto3" alt=""></div>
                         <div class="producto__info">
                             <p class="producto_nombre">Logotipo</p>
@@ -263,7 +259,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port4" class="filter web">
+                    <div id="port4" class="portfolioHover filter web">
                         <div id="producto4" alt=""></div>
                         <div class="producto__info">
                             <p class="producto_nombre">Formulario web</p>
@@ -274,7 +270,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port5" class="filter design">
+                    <div id="port5" class="portfolioHover filter design">
                         <div id="producto5" alt=""></div>
                         <div class="producto__info">
                             <p class="producto_nombre">Banners RRSS</p>
@@ -284,7 +280,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port6" class="filter design">
+                    <div id="port6" class="portfolioHover filter design">
                         <div id="producto6" alt=""></div>
                         <div class="producto__info">
                             <p class="producto_nombre">Formulario web</p>
@@ -295,32 +291,32 @@
                             </div>
                         </div>
                     </div>
-                    <div id="port7" class="filter design">
+                    <div id="port7" class="portfolioHover filter design">
                         <div id="producto7" alt=""></div>
                         <div class="producto__info">
-                            <span class="producto_nombre">Adidas Originals</span>
-                            <p>Men's running shirt</p>
+                            <span class="producto_nombre">Otro más</span>
+                            <p>Otra descripción más.</p>
                         </div>
                     </div>
-                    <div id="port8" class="filter web">
+                    <div id="port8" class="portfolioHover filter web">
                         <div id="producto8" alt=""></div>
                         <div class="producto__info">
-                            <span class="producto_nombre">Adidas Originals</span>
-                            <p>Men's running shirt</p>
+                            <span class="producto_nombre">Otro más</span>
+                            <p>Otra descripción más.</p>
                         </div>
                     </div>
-                    <div id="port9" class="filter web">
+                    <div id="port9" class="portfolioHover filter web">
                         <div id="producto9" alt=""></div>
                         <div class="producto__info">
-                            <span class="producto_nombre">Adidas Originals</span>
-                            <p>Men's running shirt</p>
+                            <span class="producto_nombre">Otro más</span>
+                            <p>Otra descripción más.</p>
                         </div>
                     </div>
-                    <div id="port10" class="filter web">
+                    <div id="port10" class="portfolioHover filter web">
                         <div id="producto10" alt=""></div>
                         <div class="producto__info">
-                            <span class="producto_nombre">Adidas Originals</span>
-                            <p>Men's running shirt</p>
+                            <span class="producto_nombre">Otro más</span>
+                            <p>Otra descripción más.</p>
                         </div>
                     </div>
                 </div>
@@ -385,93 +381,30 @@ document.getElementById("flecha-abajo").addEventListener("click", function() {
     return false;
 });
 
-// portfolio
-$('#port1').hover(function(){
-    $('#port1').addClass('animate');
-    $('#producto1').addClass('animate2');
-    $('#port1 > .producto__info').addClass('animate3');
+$('.portfolioHover').hover(function(){
+    $(this).addClass('animate');
+    $(this).find('.producto').addClass('animate2');
+    $(this).find('.producto__info').addClass('animate3');
     }, function(){
-    $('#port1').removeClass('animate');   
-    $('#producto1').removeClass('animate2');
-    $('#port1 > .producto__info').removeClass('animate3');
+    $(this).removeClass('animate');   
+    $(this).find('.producto').removeClass('animate2');
+    $(this).find('.producto__info').removeClass('animate3');
 }); 
-$('#port2').hover(function(){
-    $('#port2').addClass('animate');
-    $('#producto2').addClass('animate2');
-    $('#port2 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port2').removeClass('animate');   
-    $('#producto2').removeClass('animate2');
-    $('#port2 > .producto__info').removeClass('animate3');
-});
-$('#port3').hover(function(){
-    $('#port3').addClass('animate');
-    $('#producto3').addClass('animate2');
-    $('#port3 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port3').removeClass('animate');   
-    $('#producto3').removeClass('animate2');
-    $('#port3 > .producto__info').removeClass('animate3');
-}); 
-$('#port4').hover(function(){
-    $('#port4').addClass('animate');
-    $('#producto4').addClass('animate2');
-    $('#port4 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port4').removeClass('animate');   
-    $('#producto4').removeClass('animate2');
-    $('#port4 > .producto__info').removeClass('animate3');
-}); 
-$('#port5').hover(function(){
-    $('#port5').addClass('animate');
-    $('#producto5').addClass('animate2');
-    $('#port5 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port5').removeClass('animate');   
-    $('#producto5').removeClass('animate2');
-    $('#port5 > .producto__info').removeClass('animate3');
-}); 
-$('#port6').hover(function(){
-    $('#port6').addClass('animate');
-    $('#producto6').addClass('animate2');
-    $('#port6 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port6').removeClass('animate');   
-    $('#producto6').removeClass('animate2');
-    $('#port6 > .producto__info').removeClass('animate3');
-}); 
-$('#port7').hover(function(){
-    $('#port7').addClass('animate');
-    $('#producto7').addClass('animate2');
-    $('#port7 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port7').removeClass('animate');   
-    $('#producto7').removeClass('animate2');
-    $('#port7 > .producto__info').removeClass('animate3');
-}); 
-$('#port8').hover(function(){
-    $('#port8').addClass('animate');
-    $('#producto8').addClass('animate2');
-    $('#port8 > .producto__info').addClass('animate3');
-    }, function(){
-    $('#port8').removeClass('animate');   
-    $('#producto8').removeClass('animate2');
-    $('#port8 > .producto__info').removeClass('animate3');
-}); 
+
 
 $(document).ready(function(){
   $(".button").click(function(){
-    var value = $(this).attr("data-filter");
+    let value = $(this).attr("data-filter");
     if (value =="todos") {
-      $(".filter").show("1000");
+        $(".filter").show("500");
     }
     else {
-     $(".filter").not("."+value).hide("1000");
-   $(".filter").filter("."+value).show("1000"); 
+        $(".filter").not("." + value).hide("500");
+        $(".filter").filter("." + value).show("500");
     }
-    //add active class
-    $("ul .button").click(function(){
-      $(this).addClass("btn__activo").siblings().removeClass("btn__activo")
+    //añade/quita btn_activo
+    $(".button").click(function(){
+        $(this).addClass("btn__activo").siblings().removeClass("btn__activo")
     })
   })
 })

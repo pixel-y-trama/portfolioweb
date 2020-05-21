@@ -384,6 +384,7 @@ nav a .barrita-animada {
   position: absolute;
   width: 10%;
   cursor: pointer;
+  transition: 1.2s ease;
   -webkit-transition: 1.2s ease;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
@@ -743,6 +744,7 @@ nav a .barrita-animada {
 }
 
 #portfolio__container #producto1 {
+  display: block;
   width: 100%;
   height: 100%;
   background: url("../images/designs/silveria.jpg") no-repeat;
@@ -798,7 +800,13 @@ nav a .barrita-animada {
   transition: all 0.3s ease-out;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
+  #portfolio__container .producto__info {
+    top: 290px;
+  }
+}
+
+@media (min-width: 1300px) {
   #portfolio__container .producto__info {
     top: 305px;
   }
@@ -814,6 +822,18 @@ nav a .barrita-animada {
 
 #portfolio__container .producto__info .producto_descripcion {
   height: auto;
+}
+
+@media (min-width: 1000px) {
+  #portfolio__container .producto__info .producto_descripcion {
+    height: 40px;
+  }
+}
+
+@media (min-width: 1350px) {
+  #portfolio__container .producto__info .producto_descripcion {
+    height: auto;
+  }
 }
 
 #portfolio__container .producto__info .producto_logos {
