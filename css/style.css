@@ -941,7 +941,23 @@ nav a .barrita-animada {
 }
 
 #contacto #rrss1:hover, #contacto #rrss2:hover, #contacto #rrss3:hover, #contacto #rrss4:hover {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#contacto #rrss1:hover {
+  background: url(../images/logos/linkedin-logo-hover.svg);
+}
+
+#contacto #rrss2:hover {
+  background: url(../images/logos/twitter-logo-hover.svg);
+}
+
+#contacto #rrss3:hover {
+  background: url(../images/logos/github-logo-hover.svg);
+}
+
+#contacto #rrss4:hover {
+  background: url(../images/logos/instagram-logo-hover.svg);
 }
 /*# sourceMappingURL=style.css.map */
